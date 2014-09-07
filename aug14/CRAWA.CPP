@@ -1,0 +1,30 @@
+#include"stdio.h"
+#include"stdlib.h"
+
+int main(){
+    int t,x,y;
+    scanf( "%d", &t );
+    for( int i=0; i<t; i++ ){
+        scanf( "%d%d", &x,&y );
+        if( x == 0 && y == 1 ){
+            printf("NO\n");
+            continue;
+        }
+        if( x<=0 ){
+            x = -1*x;
+            if( y<0 )y =-1*y;
+          	if( (x<=y && y%2 == 0) || (x>=y && x%2 == 0 )  )
+                printf( "YES\n" );
+            else
+                printf( "NO\n" );
+        }
+        else{
+            y=y-1;
+            if( y<0 ) y =-1*y;
+          	if( (x<=y && y%2 != 0) || (x>=y && x%2 != 0 )  )
+                printf( "YES\n" );
+            else
+                printf( "NO\n" );
+        }
+    }
+}
